@@ -4,11 +4,12 @@ export default function DefaultFeatureList() {
       <div className="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
         <div className="max-w-screen-md mb-8 lg:mb-16">
           <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
-            Designed for business teams like yours
+            Designed for runners like you
           </h2>
           <p className="text-gray-500 sm:text-xl dark:text-gray-400">
-            Here at Flowbite we focus on markets where technology, innovation,
-            and capital can unlock long-term value and drive economic growth.
+            At SigmaStride, we focus on empowering runners with personalized
+            training plans, innovative tools, and data-driven insights to help
+            you achieve your running goals.
           </p>
         </div>
         <div className="space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 md:space-y-0">
@@ -28,12 +29,12 @@ export default function DefaultFeatureList() {
               </svg>
             </div>
             <h3 className="mb-2 text-xl font-bold dark:text-white">
-              Marketing
+              Training Planning
             </h3>
             <p className="text-gray-500 dark:text-gray-400">
-              Plan it, create it, launch it. Collaborate seamlessly with all the
-              organization and hit your marketing goals every month with our
-              marketing plan.
+              Plan your runs, track progress, and adjust effortlessly.
+              Collaborate with your coach or rely on our intelligent suggestions
+              to hit your personal best every season.
             </p>
           </div>
           <div>
@@ -47,10 +48,13 @@ export default function DefaultFeatureList() {
                 <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"></path>
               </svg>
             </div>
-            <h3 className="mb-2 text-xl font-bold dark:text-white">Legal</h3>
+            <h3 className="mb-2 text-xl font-bold dark:text-white">
+              Injury Prevention
+            </h3>
             <p className="text-gray-500 dark:text-gray-400">
-              Protect your organization, devices and stay compliant with our
-              structured workflows and custom permissions made for you.
+              Protect your body and stay consistent with injury prevention tips,
+              recovery strategies, and personalized rest schedules designed for
+              you.
             </p>
           </div>
           <div>
@@ -70,11 +74,11 @@ export default function DefaultFeatureList() {
               </svg>
             </div>
             <h3 className="mb-2 text-xl font-bold dark:text-white">
-              Business Automation
+              Performance Analytics
             </h3>
             <p className="text-gray-500 dark:text-gray-400">
-              Auto-assign tasks, send Slack messages, and much more. Now power
-              up with hundreds of new templates to help you get started.
+              Automatically track your stats, compare sessions, and uncover
+              insights to improve your running technique and efficiency.
             </p>
           </div>
           <div>
@@ -93,10 +97,12 @@ export default function DefaultFeatureList() {
                 ></path>
               </svg>
             </div>
-            <h3 className="mb-2 text-xl font-bold dark:text-white">Finance</h3>
+            <h3 className="mb-2 text-xl font-bold dark:text-white">
+              Nutrition Guidance
+            </h3>
             <p className="text-gray-500 dark:text-gray-400">
-              Audit-proof software built for critical financial operations like
-              month-end close and quarterly budgeting.
+              Fuel your runs with tailored nutrition advice that complements
+              your training and supports your overall health.
             </p>
           </div>
           <div>
@@ -111,11 +117,11 @@ export default function DefaultFeatureList() {
               </svg>
             </div>
             <h3 className="mb-2 text-xl font-bold dark:text-white">
-              Enterprise Design
+              Goal Setting
             </h3>
             <p className="text-gray-500 dark:text-gray-400">
-              Craft beautiful, delightful experiences for both marketing and
-              product with real cross-company collaboration.
+              Set achievable milestones, monitor your progress, and celebrate
+              every win with a clear path to your ultimate running ambitions.
             </p>
           </div>
           <div>
@@ -134,11 +140,12 @@ export default function DefaultFeatureList() {
               </svg>
             </div>
             <h3 className="mb-2 text-xl font-bold dark:text-white">
-              Operations
+              Adaptive Workouts
             </h3>
             <p className="text-gray-500 dark:text-gray-400">
-              Keep your company’s lights on with customizable, iterative, and
-              structured workflows built for all efficient teams and individual.
+              Stay flexible with customizable plans that adapt to your lifestyle
+              and training level, ensuring continuous improvement without
+              burnout.
             </p>
           </div>
         </div>

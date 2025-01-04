@@ -5,7 +5,7 @@ export default function Hero() {
         <div className="grid items-center gap-8 lg:gap-12 lg:grid-cols-12">
           <div className="col-span-6 text-center sm:mb-6 lg:text-left lg:mb-0">
             <a
-              href="#"
+              href="/generator"
               className="inline-flex items-center justify-between px-1 py-1 pr-4 mb-6 text-sm text-gray-700 bg-gray-100 rounded-full dark:bg-gray-800 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700"
               role="alert"
             >
@@ -13,7 +13,7 @@ export default function Hero() {
                 New
               </span>{" "}
               <span className="text-sm font-medium">
-                Flowbite is out! See what's new
+                Training plan available! Check it out
               </span>
               <svg
                 className="w-5 h-5 ml-2"
@@ -29,11 +29,12 @@ export default function Hero() {
               </svg>
             </a>
             <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl xl:text-6xl dark:text-white">
-              We invest in the world’s potential
+              Personalized plans to fuel your running journey
             </h1>
             <p className="max-w-xl mx-auto mb-6 font-light text-gray-500 lg:mx-0 xl:mb-8 md:text-lg xl:text-xl dark:text-gray-400">
-              Here at Flowbite we focus on markets where innovation can unlock
-              long-term value and drive economic growth.
+              At SigmaStride, we help runners achieve their goals with
+              personalized training plans designed to match your abilities and
+              ambitions.
             </p>
           </div>
           <div className="col-span-6">

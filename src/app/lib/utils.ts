@@ -1,4 +1,4 @@
-import { GeneratorFormData, trainingLevel } from "./definitions";
+import { GeneratorFormData } from "./definitions";
 import { trainingMileage } from "./constants/trainingMileage";
 import { trainingSessionsProportions } from "./constants/trainingSessionsProportions";
 
@@ -10,21 +10,6 @@ type TrainingSessionType =
   | "threshold"
   | "marathon"
   | "rest";
-
-type PhaseProportions = {
-  easy: number;
-  repetition?: number[];
-  long: number;
-  threshold?: number[];
-  interval?: number[];
-  marathon?: number;
-};
-
-type TrainingProportions = {
-  build: PhaseProportions;
-  maintenance: PhaseProportions;
-  peaking: PhaseProportions;
-};
 
 function vo2maxCalculator(D: number, t: number): number {
   // Convert time to minutes for the formula
@@ -87,7 +72,7 @@ function calculatePaces(vo2max: number) {
   };
 }
 
-function getWeekLoad(week: number, baseMileage: number): number {
+function calculateWeekMileage(week: number, baseMileage: number): number {
   let mileage = baseMileage;
 
   // Zwiększ o 2 km co tydzień, chyba że jest to 4. tydzień
@@ -180,7 +165,7 @@ const trainingSessions = {
     ],
   },
   42195: {
-    beginner: ["rest", "easy", "", "threshold", "rest", "easy", "long"],
+    beginner: ["rest", "easy", "rest", "threshold", "rest", "easy", "long"],
     intermediate: [
       "rest",
       "easy",
@@ -231,7 +216,7 @@ export function generateTrainingPlan(data: GeneratorFormData) {
     const week = [];
     const phase = getPhase(i, Number(planDuration));
     const baseMileage = trainingMileage[trainingLevel];
-    const weekLoad = getWeekLoad(i, baseMileage);
+    const weekMileage = calculateWeekMileage(i, baseMileage);
 
     for (let j = 0; j < 7; j++) {
       let trainingSession = trainingSessions[targetDistance][trainingLevel][
@@ -262,7 +247,7 @@ export function generateTrainingPlan(data: GeneratorFormData) {
         week.push({
           type: trainingSession,
           distance: `${Math.floor(
-            (weekLoad * (proportion as number)) / 100
+            (weekMileage * (proportion as number)) / 100
           )}km ${paces[trainingSession]} min/km`,
         });
       } else if (trainingSession === "interval") {
@@ -270,7 +255,7 @@ export function generateTrainingPlan(data: GeneratorFormData) {
           type: trainingSession,
           distance: calculateInterval(
             proportion as number[],
-            weekLoad,
+            weekMileage,
             paces.easy,
             paces.interval
           ),
@@ -280,7 +265,7 @@ export function generateTrainingPlan(data: GeneratorFormData) {
           type: trainingSession,
           distance: calculateRepetition(
             proportion as number[],
-            weekLoad,
+            weekMileage,
             paces.easy,
             paces.repetition
           ),
@@ -290,7 +275,7 @@ export function generateTrainingPlan(data: GeneratorFormData) {
           type: trainingSession,
           distance: calculateThreshold(
             proportion as number[],
-            weekLoad,
+            weekMileage,
             paces.easy,
             paces.threshold
           ),
@@ -306,7 +291,7 @@ export function generateTrainingPlan(data: GeneratorFormData) {
 
 function calculateRepetition(
   proportion: number[],
-  weekLoad: number,
+  weekMileage: number,
   easyPace: string,
   repetitionPace: string
 ) {
@@ -315,11 +300,11 @@ function calculateRepetition(
   for (let i = 0; i < proportion.length; i++) {
     if (i === 1) {
       result += ` + 10x${
-        Math.floor((proportion[i] * weekLoad) / 100) * 100
+        Math.floor((proportion[i] * weekMileage) / 100) * 100
       }m ${repetitionPace} min/km + `;
     } else {
       result += `${Math.floor(
-        (proportion[i] * weekLoad) / 100
+        (proportion[i] * weekMileage) / 100
       )}km ${easyPace} min/km`;
     }
   }
@@ -329,7 +314,7 @@ function calculateRepetition(
 
 function calculateInterval(
   proportion: number[],
-  weekLoad: number,
+  weekMileage: number,
   easyPace: string,
   intervalPace: string
 ) {
@@ -338,11 +323,11 @@ function calculateInterval(
   for (let i = 0; i < proportion.length; i++) {
     if (i === 1) {
       result += ` + 6x${
-        Math.floor((proportion[i] * weekLoad) / 100) * 100
+        Math.floor((proportion[i] * weekMileage) / 100) * 100
       }m ${intervalPace} min/km + `;
     } else {
       result += `${Math.floor(
-        (proportion[i] * weekLoad) / 100
+        (proportion[i] * weekMileage) / 100
       )}km ${easyPace} min/km`;
     }
   }
@@ -352,7 +337,7 @@ function calculateInterval(
 
 function calculateThreshold(
   proportion: number[],
-  weekLoad: number,
+  weekMileage: number,
   easyPace: string,
   thresholdPace: string
 ) {
@@ -361,14 +346,18 @@ function calculateThreshold(
   for (let i = 0; i < proportion.length; i++) {
     if (i === 1) {
       result += ` + 4x${
-        Math.floor((proportion[i] * weekLoad) / 100) * 100
+        Math.floor((proportion[i] * weekMileage) / 100) * 100
       }m ${thresholdPace} min/km + `;
     } else {
       result += `${Math.floor(
-        (proportion[i] * weekLoad) / 100
+        (proportion[i] * weekMileage) / 100
       )}km ${easyPace} min/km`;
     }
   }
 
   return result.trim();
+}
+
+export function sum(a: number, b: number) {
+  return a + b;
 }

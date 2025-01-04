@@ -4,15 +4,15 @@ export default function HeadingWithDescription() {
       <div className="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
         <div className="font-light text-gray-500 sm:text-lg dark:text-gray-400">
           <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
-            Powering innovation at 200,000+ companies worldwide
+            Empowering runners worldwide to achieve their goals
           </h2>
           <p className="mb-4">
-            Empower Developers, IT Ops, and business teams to collaborate at
-            high velocity. Respond to changes and deliver great customer and
-            employee service experiences fast.
+            Enable runners, coaches, and enthusiasts to collaborate seamlessly
+            and train smarter. Adapt to your progress and unlock your potential
+            with data-driven insights and personalized plans.
           </p>
           <a
-            href="#"
+            href="/generator"
             className="inline-flex items-center font-medium text-primary-600 hover:text-primary-800 dark:text-primary-500 dark:hover:text-primary-700"
           >
             Learn more
@@ -32,17 +32,16 @@ export default function HeadingWithDescription() {
         </div>
         <div className="mt-4 font-light text-gray-500 sm:text-lg lg:mt-0 dark:text-gray-400">
           <p className="mb-4">
-            Track work across the enterprise through an open, collaborative
-            platform. Link issues across Jira and ingest data from other
-            software development tools, so your IT support and operations teams
-            have richer contextual information to rapidly respond to requests,
-            incidents, and changes.
+            Track your training journey on a unified platform that connects all
+            aspects of your running experience. Analyze performance metrics,
+            integrate with popular fitness trackers, and access tailored
+            recommendations to improve every run.
           </p>
           <p>
-            Deliver great service experiences fast - without the complexity of
-            traditional ITSM solutions.Accelerate critical development work,
-            eliminate toil, and deploy changes with ease, with a complete audit
-            trail for every change.
+            Achieve your running goals faster without the guesswork. With
+            SigmaStride, eliminate inefficiencies, optimize your workouts, and
+            stay on track with a complete record of your progress and
+            achievements.
           </p>
         </div>
       </div>

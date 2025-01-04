@@ -29,6 +29,15 @@ export default function Navbar() {
                     Generator
                   </Link>
                 </li>
+                <li>
+                  <Link
+                    href="/about"
+                    className="block text-white rounded text-primary-700 dark:text-primary-500"
+                    aria-current="page"
+                  >
+                    About
+                  </Link>
+                </li>
               </ul>
             </div>
           </div>

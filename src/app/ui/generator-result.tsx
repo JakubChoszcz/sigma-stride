@@ -6,11 +6,13 @@ export default function GeneratorResult({ trainingPlan }) {
       <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
         <div className="mx-auto max-w-screen-sm text-center mb-8 lg:mb-16">
           <h2 className="mb-4 text-4xl font-extrabold text-gray-900 dark:text-white">
-            Our Team
+            Plan Smarter with SigmaStride
           </h2>
           <p className="font-light text-gray-500 lg:mb-16 sm:text-xl dark:text-gray-400">
-            Explore the whole collection of open-source web components and
-            elements built with the utility classes from Tailwind
+            Discover how our powerful tools and personalized features help
+            runners of all levels achieve their goals. From beginners to
+            seasoned athletes, SigmaStride offers a complete suite of resources
+            to make every run count.
           </p>
         </div>
         <ul className="grid gap-2 grid-cols-7 mb-5">
