@@ -1,12 +1,17 @@
 "use client";
-import { useForm } from "react-hook-form";
-import { GeneratorFormData } from "../lib/definitions";
+import { useForm, SubmitHandler } from "react-hook-form";
+import { GeneratorFormData, TrainingDay } from "../lib/definitions";
 import { generateTrainingPlan } from "../lib/utils";
+import { Dispatch, SetStateAction } from "react";
 
-export default function GeneratorForm({ setTrainingPlan }) {
-  const { register, handleSubmit } = useForm();
+export default function GeneratorForm({
+  setTrainingPlan,
+}: {
+  setTrainingPlan: Dispatch<SetStateAction<TrainingDay[][]>>;
+}) {
+  const { register, handleSubmit } = useForm<GeneratorFormData>();
 
-  const onSubmit = (data: GeneratorFormData) => {
+  const onSubmit: SubmitHandler<GeneratorFormData> = data => {
     setTrainingPlan(generateTrainingPlan(data));
   };
 

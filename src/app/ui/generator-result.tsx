@@ -1,6 +1,10 @@
 import { daysOfTheWeek } from "../lib/utils";
-
-export default function GeneratorResult({ trainingPlan }) {
+import { TrainingDay } from "../lib/definitions";
+export default function GeneratorResult({
+  trainingPlan,
+}: {
+  trainingPlan: TrainingDay[][];
+}) {
   return (
     <section className="bg-white dark:bg-gray-900">
       <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">

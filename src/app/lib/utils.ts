@@ -1,7 +1,7 @@
 import { GeneratorFormData } from "./definitions";
 import { trainingMileage } from "./constants/trainingMileage";
 import { trainingSessionsProportions } from "./constants/trainingSessionsProportions";
-
+import { phase } from "./definitions";
 type TrainingSessionType =
   | "easy"
   | "long"
@@ -10,6 +10,12 @@ type TrainingSessionType =
   | "threshold"
   | "marathon"
   | "rest";
+
+type SessionProportions = {
+  [key in phase]: {
+    [key in TrainingSessionType]?: number | number[];
+  };
+};
 
 function vo2maxCalculator(D: number, t: number): number {
   // Convert time to minutes for the formula
@@ -210,11 +216,13 @@ export function generateTrainingPlan(data: GeneratorFormData) {
   const vo2max = vo2maxCalculator(Number(pbDistance), timeToSeconds(pbTime));
   const paces = calculatePaces(vo2max);
 
-  const trainingSessionsProportion = trainingSessionsProportions[trainingLevel];
+  const trainingSessionsProportion = trainingSessionsProportions[
+    trainingLevel
+  ] as SessionProportions;
 
   for (let i = 0; i < Number(planDuration); i++) {
     const week = [];
-    const phase = getPhase(i, Number(planDuration));
+    const phase: phase = getPhase(i, Number(planDuration));
     const baseMileage = trainingMileage[trainingLevel];
     const weekMileage = calculateWeekMileage(i, baseMileage);
 
